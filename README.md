@@ -140,3 +140,38 @@ if m>0 then
  end.
  {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
   
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}  
+  program magma;
+ procedure nnn( var min,max,sred :integer);
+ var z,x,c :integer;
+ begin
+if max < min then begin
+  z:= min;
+  min := max;
+  max :=z ;
+   end;
+   
+  if max< sred then begin
+  x := sred;
+  sred := max;
+  max := x;
+   end;
+   
+  if sred< min then begin
+  c := min;
+ min := sred;
+  sred:= c;
+   end;
+   
+   writeln( min);
+      writeln( sred);
+         writeln( max);
+         end;
+var z,x,c :integer;
+begin
+read(z);
+read(x);
+read(c);
+nnn(z,x,c)
+end.
+ {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
