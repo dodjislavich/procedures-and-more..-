@@ -90,7 +90,7 @@ end;
 
          if ( n div 1 >0) then i:= n div 1;
 if m>0 then
-  for s:= 0 to m do 
+  for s:= 1 to m do 
   begin
   write('M');
   end;
