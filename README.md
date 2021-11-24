@@ -355,3 +355,42 @@ del (z,b);
 
 end. 
 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{   
+ 
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}  
+program abcA100;
+
+function del(var a,b :integer): integer;
+
+var sigma,x,omega,n1,n2, nod :integer;
+
+begin
+
+sigma:=a;
+
+omega:=b;
+
+if sigma < omega then begin x:=omega; omega:=sigma; sigma:=x; end;
+
+while omega <>0 do
+
+begin
+
+sigma := sigma mod omega;
+
+x:=omega; omega:=sigma; sigma:=x;
+
+end;
+del:=  sigma;
+
+end;
+
+var z,b :integer;
+
+begin
+
+read(z,b);
+
+writeln ('НОК(',z,',', b,')',' = ',del(z,b));
+
+end. 
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{   
