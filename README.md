@@ -288,3 +288,70 @@ del (z,b);
 
 end.
 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{   
+ 
+ 
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}  
+ program abcC94;
+ 
+procedure del(var a,b :integer);
+
+var sigma, x, omega, n1, n2, nod, nok :integer;
+
+begin
+
+ sigma:=a;
+ 
+ omega:=b;
+ 
+ if sigma < omega then
+ 
+  begin 
+  
+   x:=omega; 
+   
+   omega:=sigma;
+   
+   sigma:=x;
+   
+  end;
+  
+ while omega <>0 do
+ 
+  begin
+  
+   sigma := sigma mod omega;
+   
+ if sigma < omega then
+ 
+  begin 
+  
+   x:=omega; 
+   
+   omega:=sigma;
+   
+   sigma:=x;
+   
+  end;
+  
+  end;
+
+ nod := sigma;
+ 
+ writeln (nod);
+ 
+ nok:= (a*b) div nod;
+ 
+ writeln (nok);
+ 
+end;
+
+var z, b :integer;
+
+begin
+
+read(z,b);
+
+del (z,b);
+
+end. 
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{   
