@@ -574,3 +574,134 @@ writeln('числа ',z,',',b,' простые: ',prostiesli(z,b));
 
 end. 
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
+
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+program tiredC105;
+
+
+function microslav(n: integer):integer;
+
+var q,w,e :integer;
+
+begin 
+
+w:=0;
+
+while n > 0 do
+
+begin 
+
+w:= w + 1 ;
+
+n := n div 10;
+
+end;
+microslav :=w;
+end;
+
+
+function isPrime(n: integer):boolean;
+
+var count, count1, count2,count3, k, i, n1, n2, n3, q,m: integer;
+
+begin
+
+ n1:=0;
+ 
+ n2:=0;
+ 
+ q:=n;
+ 
+ m:=n;
+ 
+  count:= 0;
+  
+  k:= 2;
+  
+ while (k*k <= n) and (count = 0) do begin
+ 
+    if n mod k = 0 then 
+    
+       count:= count + 1;
+       
+    k:= k + 1
+    
+  end;
+
+
+  if count = 0 then
+  
+  begin
+  
+  for i := 0 to microslav(n) do 
+  
+  begin
+  
+  n1:= m mod 10;
+     
+ count1:= 0;
+ 
+  k:= 2;
+  
+ while (k*k <= n1) and (count1 = 0) do begin
+ 
+    if n1 mod k = 0 then 
+    
+       count1:= count1 + 1;
+       
+    k:= k + 1
+    
+    end;
+  
+  n2:= m div 10;
+  
+ count2:= 0;
+ 
+  k:= 2;
+
+ while (k*k <= n2) and (count2 = 0) do begin
+ 
+    if n2 mod k = 0 then 
+    
+       count2:= count2 + 1;
+       
+    k:= k + 1
+    
+    end;
+    
+       n3:= q mod 10;
+     
+ count3:= 0;
+ 
+  k:= 2;
+  
+ while (k*k <= n3) and (count3 = 0) do begin
+ 
+    if n3 mod k = 0 then 
+    
+       count3:= count3 + 1;
+       
+    k:= k + 1
+   
+  end;
+  
+  end;
+  
+  end;
+  
+  isPrime:= (count = 0) and (count2 = 0)  and (count1 = 0) and (count3 = 0)
+
+  end;
+  
+ var a,b,c :integer;
+ 
+ begin 
+ 
+ read (a);
+ 
+ writeln(microslav(a));
+ 
+ writeln (isPrime(a));
+ 
+ end.
+ [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
