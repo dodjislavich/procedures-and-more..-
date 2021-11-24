@@ -518,3 +518,59 @@ writeln (ideal(z));
 
 end.
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
+
+
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+program abcB105;
+ function prostiesli(var a,b :integer): boolean;
+
+var sigma,x,omega,n1,n2, nod :integer;
+
+begin
+
+sigma:=a;
+
+omega:=b;
+
+if sigma < omega then
+
+ begin x:=omega;
+ 
+ omega:=sigma; 
+ 
+ sigma:=x; 
+ 
+ end;
+
+while omega <>0 do
+
+begin
+
+sigma := sigma mod omega;
+
+x:=omega;
+
+ omega:=sigma; 
+ 
+ sigma:=x;
+
+end;
+
+if sigma = 1 then 
+ 
+ prostiesli := true
+ 
+ else prostiesli :=false;
+
+end;
+
+var z,b :integer;
+
+begin
+
+read(z,b);
+
+writeln('числа ',z,',',b,' простые: ',prostiesli(z,b));
+
+end. 
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
