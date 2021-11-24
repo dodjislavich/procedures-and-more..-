@@ -394,3 +394,43 @@ writeln ('НОК(',z,',', b,')',' = ',del(z,b));
 
 end. 
 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{   
+
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}  
+program abcB100;
+
+function summa(var a :integer) : integer;
+
+var q,w,e :integer;
+
+begin
+
+ q:=0;
+ 
+ w:=0;
+ 
+ while a<>0 do 
+ 
+  begin
+  
+   q := a mod 10;
+   
+   w := w + q;
+   
+   a := a div 10;
+   
+  end;
+  
+ summa := w;
+ 
+end;
+
+var z :integer;
+
+begin
+
+read(z);
+
+writeln (summa(z));
+
+end. 
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{   
