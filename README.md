@@ -138,10 +138,10 @@ if m>0 then
  read (z);
  how(z);
  end.
- {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
   
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}  
-  program magma;
+  program magmaA94;
  procedure nnn( var min,max,sred :integer);
  var z,x,c :integer;
  begin
@@ -174,4 +174,36 @@ read(x);
 read(c);
 nnn(z,x,c)
 end.
- {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
+
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}  
+program abcB94;
+ procedure del(var a,b :integer);
+ var sigma,x,omega,n1,n2, nod :integer;
+ begin
+   sigma:=a;
+   omega:=b;
+    if sigma < omega then 
+   begin
+   x:=omega;
+   omega:=sigma;
+   sigma:=x;
+   end;
+ while omega <>0 do
+   begin
+   sigma := sigma mod omega;
+   x:=omega;
+   omega:=sigma;
+   sigma:=x;
+   end;
+  nod := sigma;
+  writeln (a div nod);
+  writeln('----');
+  writeln (b div nod);
+   end;
+var z,b :integer;
+begin
+read(z,b);
+del (z,b);
+end.
+{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{   
