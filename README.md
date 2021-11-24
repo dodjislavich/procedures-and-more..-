@@ -390,7 +390,7 @@ begin
 
 read(z,b);
 
-writeln ('НОК(',z,',', b,')',' = ',del(z,b));
+writeln ('НОD(',z,',', b,')',' = ',del(z,b));
 
 end. 
 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{   
@@ -474,3 +474,47 @@ writeln (reverse(z));
 
 end. 
 [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
+
+]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+program abcA105;
+
+function ideal(var a :integer) :boolean;
+
+var q,w,e :integer;
+
+begin
+
+ q:=0;
+ 
+ w:=1;
+ 
+for e:= 0 to a do begin
+  
+  if a mod w = 0 then 
+  
+  if w < a then
+  
+    q:=q + w;
+    
+    w:= w + 1;
+    
+    end;
+    
+ if q = a then
+ 
+     ideal:= True
+     
+else ideal:= False;
+
+end;
+
+var z :integer;
+
+begin
+
+read(z);
+
+writeln (ideal(z));
+
+end.
+[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[
