@@ -2,19 +2,31 @@
 
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}
 program bogdanA90;
+
 procedure tired(var n :integer);
+
 var k :integer;
+
 begin
+
 for k:= 0 to n do
+
 begin
+
   write('-');
+  
 end;
+
 end;
 
 var z,x,c :integer;
+
 begin
+
 read(z);
+
 tired(z);
+
 end.
 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
 
@@ -23,29 +35,50 @@ end.
 program CEEEEEEEEEEEEEEBB90;
 
 procedure polka( var n :integer);
+
 var a,k,s :integer;
+
 begin
+
 a:=0;
+
 k:=0;
+
 while n<>0 do
+
 begin
+
 a:= n mod 10;
+
 n:= n div 10;
+
 k:= k*10+a;
+
 end;
+
 while k<>0 do
+
 begin
+
 s:= k mod 10;
+
 k:= k div 10;
+
 writeln(s);
+
 end;
+
 end;
 
 
 var z,x,c :integer;
+
 begin
+
 read (z);
+
 polka(z);
+
 end.
 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
 
@@ -55,11 +88,17 @@ end.
 program solohardC90;
  
  procedure how(var n :integer);
+ 
  var m,d,c,l,x,v,i,s :integer;
+ 
  begin
+ 
  if n div 1000 > 0 then begin
+ 
  m := n div 1000;
+ 
  n:= n mod 1000;
+ 
  end;
  
     if (n div 500 > 0)  then begin
@@ -134,76 +173,118 @@ if m>0 then
   end;
   
  var z,x,c :integer;
+ 
  begin
+ 
  read (z);
+ 
  how(z);
+ 
  end.
 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
   
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}  
   program magmaA94;
+  
  procedure nnn( var min,max,sred :integer);
+ 
  var z,x,c :integer;
+ 
  begin
+ 
 if max < min then begin
+
   z:= min;
+  
   min := max;
+  
   max :=z ;
+  
    end;
    
   if max< sred then begin
+  
   x := sred;
+  
   sred := max;
+  
   max := x;
+  
    end;
    
   if sred< min then begin
-  c := min;
+  c := min; 
  min := sred;
   sred:= c;
    end;
-   
+ 
    writeln( min);
-      writeln( sred);
-         writeln( max);
-         end;
+   writeln( sred);
+   writeln( max);     
+   end;
+         
 var z,x,c :integer;
+
 begin
+
 read(z);
+
 read(x);
+
 read(c);
+
 nnn(z,x,c)
+
 end.
 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{
 
 }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}  
 program abcB94;
+
  procedure del(var a,b :integer);
+ 
  var sigma,x,omega,n1,n2, nod :integer;
+ 
  begin
+ 
    sigma:=a;
+   
    omega:=b;
-    if sigma < omega then 
+   
+   if sigma < omega then 
    begin
    x:=omega;
    omega:=sigma;
    sigma:=x;
    end;
+   
  while omega <>0 do
+ 
    begin
+   
    sigma := sigma mod omega;
+   
    x:=omega;
    omega:=sigma;
    sigma:=x;
+   
    end;
+   
   nod := sigma;
+  
   writeln (a div nod);
   writeln('----');
   writeln (b div nod);
+  
    end;
+   
 var z,b :integer;
+
 begin
+
 read(z,b);
+
 del (z,b);
+
 end.
 {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{   
